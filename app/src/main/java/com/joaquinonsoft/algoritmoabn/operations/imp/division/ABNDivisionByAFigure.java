@@ -71,8 +71,8 @@ public class ABNDivisionByAFigure extends AbstractABNOperation {
     public int[][] getSteps() {
         int steps[][] = new int[4][3];
         int row = 0;
-        int remainder=0;
-        int quotient=0;
+        int remainder;
+        int quotient;
 
         steps[row][COLUMN_REMAINDER] = operand1;
         steps[row][COLUMN_TAKING] = operand2;
