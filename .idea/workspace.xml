@@ -15,12 +15,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7db8e15-7d5c-48ef-afa4-2bfbcc1d1ab6" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/division/ABNDivisionByAFigure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/division/ABNDivisionByAFigureTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/DecompositionTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/DecompositionTest.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,16 +37,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/AlgoritmoABN$DecompositionTest.ic" NAME="DecompositionTest Coverage Results" MODIFIED="1539027866208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.joaquinonsoft.algoritmoabn.operations.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/AlgoritmoABN$ABNMultiplicationTest.ic" NAME="ABNMultiplicationTest Coverage Results" MODIFIED="1539029853009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.joaquinonsoft.algoritmoabn.operations.imp.multiplication.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/AlgoritmoABN$DecompositionTest.ic" NAME="DecompositionTest Coverage Results" MODIFIED="1539030922389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.joaquinonsoft.algoritmoabn.operations.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/AlgoritmoABN$ABNSumTest.ic" NAME="ABNSumTest Coverage Results" MODIFIED="1539027834101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.joaquinonsoft.algoritmoabn.operations.imp.sum.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/AlgoritmoABN$operations_in_app.ic" NAME="operations in app Coverage Results" MODIFIED="1539022076508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AlgoritmoABN$operations_in_app.ic" NAME="operations in app Coverage Results" MODIFIED="1539030661861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AlgoritmoABN$FriendsOfTest.ic" NAME="FriendsOfTest Coverage Results" MODIFIED="1539027891085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.joaquinonsoft.algoritmoabn.operations.*</FILTER>
     </SUITE>
@@ -91,48 +98,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ABNMultiplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/multiplication/ABNMultiplication.java">
+      <file leaf-file-name="ABNDivisionByAFigure.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/division/ABNDivisionByAFigure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-431">
-              <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+            <state relative-caret-position="363">
+              <caret line="103" column="51" selection-start-line="103" selection-start-column="51" selection-end-line="103" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2743#2744#0" expanded="true" />
-                <element signature="e#2783#2784#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ABNInteractiveSum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/sum/ABNInteractiveSum.java">
+      <file leaf-file-name="ABNDivisionByAFigureTest.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/division/ABNDivisionByAFigureTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ABNSubtractionTest.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/subtraction/ABNSubtractionTest.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+            <state relative-caret-position="155">
+              <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
               <folding>
                 <element signature="e#0#711#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ABNMultiplicationTest.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/multiplication/ABNMultiplicationTest.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-              <folding>
-                <element signature="e#782#830#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2532,8 +2516,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/multiplication/ABNMultiplication.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/sum/ABNSumTest.kt" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/multiplication/ABNMultiplicationTest.kt" />
-        <option value="$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/DecompositionTest.kt" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/FriendsOfTest.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/multiplication/ABNMultiplicationByAFigure.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/DecompositionTest.kt" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/division/ABNDivisionByAFigure.kt" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/division/ABNDivisionByAFigureTest.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/division/ABNDivisionByAFigure.java" />
       </list>
     </option>
   </component>
@@ -2549,7 +2537,53 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AlgoritmoABN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgoritmoABN" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlgoritmoABN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgoritmoABN" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlgoritmoABN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgoritmoABN" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlgoritmoABN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgoritmoABN" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlgoritmoABN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgoritmoABN" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlgoritmoABN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgoritmoABN" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="operations" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2557,88 +2591,10 @@
               <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
-            <path>
-              <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="algoritmoabn" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="algoritmoabn" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="operations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="algoritmoabn" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="operations" type="462c0819:PsiDirectoryNode" />
-              <item name="imp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="algoritmoabn" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="operations" type="462c0819:PsiDirectoryNode" />
-              <item name="imp" type="462c0819:PsiDirectoryNode" />
-              <item name="multiplication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="operations" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="operations" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="imp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="operations" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="imp" type="462c0819:PsiDirectoryNode" />
-              <item name="multiplication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="operations" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="imp" type="462c0819:PsiDirectoryNode" />
-              <item name="subtraction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="operations" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="imp" type="462c0819:PsiDirectoryNode" />
-              <item name="sum" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AlgoritmoABN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2676,7 +2632,30 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.operations in app">
+  <component name="RunManager" selected="Android JUnit.ABNDivisionByAFigureTest">
+    <configuration name="ABNDivisionByAFigureTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joaquinonsoft.algoritmoabn.operations.imp.division.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.joaquinonsoft.algoritmoabn.operations.imp.division" />
+      <option name="MAIN_CLASS_NAME" value="com.joaquinonsoft.algoritmoabn.operations.imp.division.ABNDivisionByAFigureTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration name="ABNMultiplicationByAFigureTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
@@ -2699,10 +2678,6 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
-      <method>
-        <option name="Make" enabled="false" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration name="ABNMultiplicationTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
@@ -2726,37 +2701,6 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
-      <method>
-        <option name="Make" enabled="false" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ABNSumTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joaquinonsoft.algoritmoabn.operations.imp.sum.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.joaquinonsoft.algoritmoabn.operations.imp.sum" />
-      <option name="MAIN_CLASS_NAME" value="com.joaquinonsoft.algoritmoabn.operations.imp.sum.ABNSumTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-      <method>
-        <option name="Make" enabled="false" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration name="DecompositionTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
@@ -2803,10 +2747,6 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
-      <method>
-        <option name="Make" enabled="false" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -2957,18 +2897,18 @@
       <item itemvalue="Android App.app" />
       <item itemvalue="Android JUnit.operations in app" />
       <item itemvalue="Android JUnit.DecompositionTest" />
-      <item itemvalue="Android JUnit.ABNSumTest" />
       <item itemvalue="Android JUnit.FriendsOfTest" />
       <item itemvalue="Android JUnit.ABNMultiplicationTest" />
       <item itemvalue="Android JUnit.ABNMultiplicationByAFigureTest" />
+      <item itemvalue="Android JUnit.ABNDivisionByAFigureTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Android JUnit.ABNDivisionByAFigureTest" />
+        <item itemvalue="Android JUnit.DecompositionTest" />
         <item itemvalue="Android JUnit.ABNMultiplicationByAFigureTest" />
         <item itemvalue="Android JUnit.ABNMultiplicationTest" />
         <item itemvalue="Android JUnit.FriendsOfTest" />
-        <item itemvalue="Android JUnit.DecompositionTest" />
-        <item itemvalue="Android JUnit.ABNSumTest" />
       </list>
     </recent_temporary>
   </component>
@@ -2986,35 +2926,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ABNSumTest - 2018.10.08 at 20h 10m 23s.xml">
-      <configuration name="ABNSumTest" configurationId="AndroidJUnit" />
+    <history-entry file="ABNDivisionByAFigureTest - 2018.10.09 at 01h 07m 28s.xml">
+      <configuration name="ABNDivisionByAFigureTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ABNSumTest - 2018.10.08 at 20h 10m 28s.xml">
-      <configuration name="ABNSumTest" configurationId="AndroidJUnit" />
+    <history-entry file="ABNDivisionByAFigureTest - 2018.10.09 at 01h 07m 40s.xml">
+      <configuration name="ABNDivisionByAFigureTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ABNSumTest - 2018.10.08 at 21h 43m 23s.xml">
-      <configuration name="ABNSumTest" configurationId="AndroidJUnit" />
+    <history-entry file="ABNDivisionByAFigureTest - 2018.10.09 at 01h 08m 31s.xml">
+      <configuration name="ABNDivisionByAFigureTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ABNSubtractionTest - 2018.10.08 at 21h 43m 41s.xml">
-      <configuration name="ABNSubtractionTest" configurationId="AndroidJUnit" />
+    <history-entry file="ABNDivisionByAFigureTest - 2018.10.09 at 01h 09m 05s.xml">
+      <configuration name="ABNDivisionByAFigureTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ABNSumTest - 2018.10.08 at 21h 43m 55s.xml">
-      <configuration name="ABNSumTest" configurationId="AndroidJUnit" />
+    <history-entry file="ABNDivisionByAFigureTest - 2018.10.09 at 01h 09m 20s.xml">
+      <configuration name="ABNDivisionByAFigureTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="DecompositionTest - 2018.10.08 at 21h 44m 27s.xml">
-      <configuration name="DecompositionTest" configurationId="AndroidJUnit" />
+    <history-entry file="ABNDivisionByAFigureTest - 2018.10.09 at 01h 09m 25s.xml">
+      <configuration name="ABNDivisionByAFigureTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="FriendsOfTest - 2018.10.08 at 21h 44m 52s.xml">
-      <configuration name="FriendsOfTest" configurationId="AndroidJUnit" />
+    <history-entry file="ABNDivisionByAFigureTest - 2018.10.09 at 01h 11m 16s.xml">
+      <configuration name="ABNDivisionByAFigureTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="operations_in_app - 2018.10.08 at 21h 47m 16s.xml">
-      <configuration name="operations in app" configurationId="AndroidJUnit" />
+    <history-entry file="ABNDivisionByAFigureTest - 2018.10.09 at 01h 12m 20s.xml">
+      <configuration name="ABNDivisionByAFigureTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="operations_in_app - 2018.10.08 at 22h 16m 03s.xml">
-      <configuration name="operations in app" configurationId="AndroidJUnit" />
+    <history-entry file="ABNDivisionByAFigureTest - 2018.10.09 at 01h 13m 14s.xml">
+      <configuration name="ABNDivisionByAFigureTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ABNMultiplicationTest - 2018.10.08 at 22h 17m 33s.xml">
-      <configuration name="ABNMultiplicationTest" configurationId="AndroidJUnit" />
+    <history-entry file="ABNDivisionByAFigureTest - 2018.10.09 at 01h 14m 01s.xml">
+      <configuration name="ABNDivisionByAFigureTest" configurationId="AndroidJUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -3036,30 +2976,30 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" sideWeight="0.5017544" side_tool="true" weight="0.23806609" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.33577535" side_tool="true" visible="true" weight="0.26" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6642247" visible="true" weight="0.26" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.32112333" side_tool="true" visible="true" weight="0.31176472" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65995115" weight="0.25882354" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3791209" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.499388" weight="0.32941177" />
       <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.5738706" weight="0.32941177" />
       <window_info id="Captures" order="2" weight="0.249694" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48171702" visible="true" weight="0.26251528" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.495116" weight="0.32941177" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48034188" visible="true" weight="0.26251528" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.492674" weight="0.32941177" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.32986537" />
-      <window_info id="Structure" order="1" sideWeight="0.518283" side_tool="true" visible="true" weight="0.26251528" />
+      <window_info id="Structure" order="1" sideWeight="0.51965815" side_tool="true" weight="0.26251528" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4932845" weight="0.4" />
-      <window_info id="Favorites" order="2" sideWeight="0.5017544" side_tool="true" weight="0.23806609" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.6788767" visible="true" weight="0.31176472" />
+      <window_info id="Favorites" order="2" sideWeight="0.51965815" side_tool="true" weight="0.26251528" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.3791209" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -3073,11 +3013,10 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Android Profiler" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="7" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="5" />
-      <window_info id="Capture Tool" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -3087,10 +3026,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="11" weight="0.32941177" />
+      <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Build Variants" order="3" side_tool="true" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Android Profiler" order="12" show_stripe_button="false" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -3105,31 +3045,27 @@
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/division/ABNDivisionByAFigure.java</url>
+          <line>106</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/division/ABNDivisionByAFigure.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="31" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/subtraction/ABNSubtraction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="52" column="62" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/sum/ABNSumTest.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#711#0" expanded="true" />
-            <element signature="e#771#819#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3178,10 +3114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1034">
           <caret line="49" column="29" lean-forward="true" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#711#0" expanded="true" />
-            <element signature="e#771#819#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3199,10 +3131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="770">
           <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#711#0" expanded="true" />
-            <element signature="e#771#819#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3218,10 +3146,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/ExampleUnitTest.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
+      <provider editor-type-id="text-editor">
         <state />
       </provider>
     </entry>
@@ -3238,23 +3166,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
+      <provider editor-type-id="text-editor">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/AbstractABNOperation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/joaquinonsoft/algoritmoabn/ExampleInstrumentedTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java">
@@ -3293,10 +3214,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-id="android-manifest">
         <state />
       </provider>
-      <provider editor-type-id="android-manifest">
+      <provider selected="true" editor-type-id="text-editor">
         <state />
       </provider>
     </entry>
@@ -3386,38 +3307,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/sum/ABNSumTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/DecompositionTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#711#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="682">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/joaquinonsoft/algoritmoabn/ExampleInstrumentedTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/Decomposition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-521">
+        <state relative-caret-position="64">
           <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/FriendsOf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="321">
           <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/sum/ABNSumTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#711#0" expanded="true" />
-            <element signature="e#771#819#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3432,30 +3353,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/multiplication/ABNMultiplicationByAFigureTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/multiplication/ABNMultiplicationByAFigure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="79" selection-start-line="79" selection-end-line="80" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/division/ABNDivisionByAFigureTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
           <folding>
             <element signature="e#0#711#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/joaquinonsoft/algoritmoabn/operations/imp/multiplication/ABNMultiplicationTest.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/division/ABNDivisionByAFigure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding>
-            <element signature="e#782#830#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/joaquinonsoft/algoritmoabn/operations/imp/multiplication/ABNMultiplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-431">
-          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        <state relative-caret-position="363">
+          <caret line="103" column="51" selection-start-line="103" selection-start-column="51" selection-end-line="103" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2743#2744#0" expanded="true" />
-            <element signature="e#2783#2784#0" expanded="true" />
           </folding>
         </state>
       </provider>

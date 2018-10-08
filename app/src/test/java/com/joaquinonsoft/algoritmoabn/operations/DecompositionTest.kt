@@ -46,6 +46,21 @@ class DecompositionTest {
     }
 
     @Test
+    fun getUnitsInThounsands() {
+        assertEquals(4000, decomp.unitsInThousands)
+    }
+
+    @Test
+    fun getUnitsInHundreds() {
+        assertEquals(300, decomp.unitsInHundreds)
+    }
+
+    @Test
+    fun getUnitsInTens() {
+        assertEquals(50, decomp.unitsInTens)
+    }
+
+    @Test
     fun toStr() {
         assertEquals("4356 = 4000 + 300 + 50 + 6", decomp.toString())
     }
