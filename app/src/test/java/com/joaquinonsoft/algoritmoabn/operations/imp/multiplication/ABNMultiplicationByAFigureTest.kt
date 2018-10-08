@@ -22,8 +22,8 @@ import org.junit.Test
 
 import org.junit.Assert.*
 
-class ABNMultiplicationTest {
-    private var multiplication: ABNMultiplication = ABNMultiplication(238, 8)
+class ABNMultiplicationByAFigureTest {
+    private var multiplication: ABNMultiplicationByAFigure = ABNMultiplicationByAFigure(238, 8)
 
     @Test
     fun getResult() {

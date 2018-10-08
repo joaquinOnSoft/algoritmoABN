@@ -60,13 +60,13 @@ import com.joaquinonsoft.algoritmoabn.operations.Decomposition;
  *       8 |   64 | 1904
  * </pre>
  */
-public class ABNMultiplication extends AbstractABNOperation {
+public class ABNMultiplicationByAFigure extends AbstractABNOperation {
 
     private static final int COLUM_MULTIPLYING_IN_UNITS = 0;
     private static final int COLUM_PARTIAL_PRODUCTS = 1;
     private static final int COLUM_ACCUMULATED_PRODUCT = 2;
 
-    public ABNMultiplication(int operand1, int operand2){
+    public ABNMultiplicationByAFigure(int operand1, int operand2){
         super(operand1,operand2);
     }
 
