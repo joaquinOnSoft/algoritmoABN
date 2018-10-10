@@ -22,21 +22,21 @@ import org.junit.Test
 
 import org.junit.Assert.*
 
-class FriendsOfTest {
-    private var friends: FriendsOf = FriendsOf(10, 4)
+class FriendsOf100Test {
+    private var friends: FriendsOf = FriendsOf(100, 4)
 
     @Test
     fun isFriend() {
-        assertTrue(friends.isFriend(6))
+        assertTrue(friends.isFriend(96))
     }
 
     @Test
     fun isNotFriend() {
-        assertFalse(friends.isFriend(5))
+        assertFalse(friends.isFriend(9))
     }
 
     @Test
     fun getResult() {
-        assertEquals(6, friends.result)
+        assertEquals(96, friends.result)
     }
 }
