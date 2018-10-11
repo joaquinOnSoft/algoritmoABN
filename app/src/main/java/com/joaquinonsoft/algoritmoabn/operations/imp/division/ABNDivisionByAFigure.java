@@ -24,9 +24,11 @@ import com.joaquinonsoft.algoritmoabn.operations.Decomposition;
 /**
  * To solve the division using open algorithms, we start with a grid of 3 columns:
  *
- *  - In the first column we will be putting the amount that we have left to distribute at each moment.
- *  - In the second column we will write the amounts that we are taking to distribute.
- *  - Finally, in the third column we will always indicate the amount distributed.
+ * <ul>
+ *  <li>In the first column we will be putting the amount that we have left to distribute at each moment.</li>
+ *  <li>In the second column we will write the amounts that we are taking to distribute.</li>
+ *  <li>Finally, in the third column we will always indicate the amount distributed.</li>
+ * </ul>
  *  
  *
  * As always we will illustrate what we have just explained by following an example problem.
