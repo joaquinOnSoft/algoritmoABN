@@ -25,7 +25,7 @@ import org.junit.Assert.*
 class OperationTest{
     @Test
     fun toStr(){
-        assertEquals("+", Operarion.SUM.toString())
+        assertEquals("+2D", Operarion.SUM.toString())
         assertEquals("-", Operarion.SUBTRACTION.toString())
         assertEquals("/1D", Operarion.DIVISONx1DIGIT.toString())
         assertEquals("*1D", Operarion.MULTIPLICATIONx1DIGIT.toString())

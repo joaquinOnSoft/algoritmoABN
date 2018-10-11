@@ -19,7 +19,7 @@
 package com.joaquinonsoft.algoritmoabn.operations;
 
 public enum Operarion {
-    SUM("+"),
+    SUM("+2D"),
     SUBTRACTION("-"),
     DIVISONx1DIGIT("/1D"),
     MULTIPLICATIONx1DIGIT("*1D");
