@@ -22,14 +22,12 @@ import org.junit.Test
 
 import org.junit.Assert.*
 
-import com.joaquinonsoft.algoritmoabn.operations.Operarion
-
 class OperationTest{
     @Test
     fun toStr(){
         assertEquals("+", Operarion.SUM.toString())
-        assertEquals("-", Operarion.SUBSTRACTION.toString())
-        assertEquals("/", Operarion.DIVISON.toString())
-        assertEquals("*", Operarion.MULTIPLICATION.toString())
+        assertEquals("-", Operarion.SUBTRACTION.toString())
+        assertEquals("/1D", Operarion.DIVISONx1DIGIT.toString())
+        assertEquals("*1D", Operarion.MULTIPLICATIONx1DIGIT.toString())
     }
 }
