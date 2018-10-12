@@ -51,20 +51,20 @@ package com.joaquinonsoft.algoritmoabn.operations.imp.sum;
 import com.joaquinonsoft.algoritmoabn.operations.AbstractABNOperation;
 
 /**
- * Sumar Números de Dos Cifras con Algoritmos Abiertos Basados en Números
+ * Add Numbers of Two Figures with Open Algorithms Based on Numbers
+ *  
+ * The sum of two numbers with open algorithms based on numbers consists of
+ * go passing amounts from the lowest number to the highest. The amount to spend will depend
+ * of the domain that each student has, since we are talking about a methodology
+ * Open that adapts to each level and student. The best way to explain how
+ * adding two-digit numbers with the methodology of open algorithms is an example.
  *
- * La suma de dos números con algoritmos abiertos basados en números consiste en
- * ir pasando cantidades del número menor al mayor. La cantidad a pasar dependerá
- * del dominio que tenga cada alumno, ya que estamos hablando de una metodología
- * abierta que se adapta a cada nivel y alumno. La mejor manera de explicar cómo
- * sumar números de dos cifras con la metodología de algoritmos abiertos es poniendo un ejemplo.
- *
- * Si partimos del siguiente problema: Pedro tiene 56 euros y Antonio 28
- * ¿Cuántos euros tienen entre los dos? La operación podría resolverse de la siguiente manera:
- *
- * Partimos de una rejilla de 3 columnas: en la 1º columna iremos poniendo la cantidad que vamos
- * cogiendo, en la 3º columna lo que nos queda por pasar y en la 2º columna el resultado acumulado
- * de lo que hemos cogido con lo que tenemos.
+ * If we start with the following problem: Pedro has 56 euros and Antonio 28
+ * How many euros do you have between the two? The operation could be solved in the following way:
+ *  
+ * We start from a grid of 3 columns: in the 1st column we will put the amount that we are going
+ * taking, in the 3rd column, what we have left to pass and in the 2nd column the accumulated result
+ * of what we have taken with what we have.
  *
  * SEE: http://lapandilladelarejilla.es/operaciones/suma-abn/
  */
@@ -79,15 +79,23 @@ public class ABNInteractiveSum extends AbstractABNOperation {
     }
 
     @Override
-    public int[][] getSteps() {
-        int nSteps = 0;
-        int steps[][] = new int[32][3];
+    protected void initialize() {
         steps[0][0] = 0;
         steps[0][1] = operand1;
         steps[0][2] = operand2;
+    }
 
+    @Override
+    protected int getNumRows() {
+        return 32;
+    }
+
+    @Override
+    public int[][] getSteps() {
+        int nSteps = 0;
         int remains;
         int takes;
+
         do{
             takes = steps[nSteps][COLUMN_REMAINS] % 10;
             if(takes == 0){

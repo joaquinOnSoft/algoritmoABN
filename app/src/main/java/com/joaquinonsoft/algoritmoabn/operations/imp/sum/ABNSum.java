@@ -61,15 +61,23 @@ public class ABNSum extends AbstractABNOperation {
     }
 
     @Override
-    public int[][] getSteps() {
-        int nSteps = 0;
-        int steps[][] = new int[32][3];
+    protected void initialize() {
         steps[0][0] = 0;
         steps[0][1] = operand1;
         steps[0][2] = operand2;
+    }
 
+    @Override
+    protected int getNumRows() {
+        return 32;
+    }
+
+    @Override
+    public int[][] getSteps() {
+        int nSteps = 0;
         int remains;
         int takes;
+
         do{
             takes = steps[nSteps][COLUMN_REMAINS] % 10;
             if(takes == 0){

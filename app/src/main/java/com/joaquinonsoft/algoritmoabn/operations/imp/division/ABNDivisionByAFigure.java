@@ -61,6 +61,18 @@ public class ABNDivisionByAFigure extends AbstractABNOperation {
     }
 
     @Override
+    protected void initialize() {
+        steps[0][COLUMN_REMAINDER] = operand1;
+        steps[0][COLUMN_TAKING] = operand2;
+        steps[0][COLUMN_QUOTIENT] = 0;
+    }
+
+    @Override
+    protected int getNumRows() {
+        return 4;
+    }
+
+    @Override
     public int getResult() {
         return operand1 / operand2;
     }
@@ -71,16 +83,9 @@ public class ABNDivisionByAFigure extends AbstractABNOperation {
 
     @Override
     public int[][] getSteps() {
-        int steps[][] = new int[4][3];
-        int row = 0;
+        int row = 1;
         int remainder;
         int quotient;
-
-        steps[row][COLUMN_REMAINDER] = operand1;
-        steps[row][COLUMN_TAKING] = operand2;
-        steps[row][COLUMN_QUOTIENT] = 0;
-        row++;
-
 
         do{
             if(row == 1){

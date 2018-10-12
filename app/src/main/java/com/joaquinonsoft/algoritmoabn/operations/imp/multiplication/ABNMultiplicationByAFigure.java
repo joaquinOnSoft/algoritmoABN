@@ -71,18 +71,24 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
     }
 
     @Override
+    protected void initialize() {
+        steps[0][COLUM_MULTIPLYING_IN_UNITS] = operand1;
+        steps[0][COLUM_PARTIAL_PRODUCTS] = operand2;
+    }
+
+    @Override
+    protected int getNumRows() {
+        return 4;
+    }
+
+    @Override
     public int getResult() {
         return operand1 * operand2;
     }
 
     @Override
     public int[][] getSteps() {
-        int steps[][] = new int[4][3];
-        int row = 0;
-
-        steps[row][COLUM_MULTIPLYING_IN_UNITS] = operand1;
-        steps[row][COLUM_PARTIAL_PRODUCTS] = operand2;
-        row++;
+        int row = 1;
 
         Decomposition decomp = new Decomposition(operand1);
         if(decomp.getThousands() > 0){
@@ -106,16 +112,16 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
         steps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getOnes();
         steps[row][COLUM_PARTIAL_PRODUCTS] = steps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
 
-        int acumulated = 0;
+        int accumulated = 0;
         for(int i=1; i<=row; i++){
             if(i == 1){
-                acumulated = steps[i][COLUM_PARTIAL_PRODUCTS];
+                accumulated = steps[i][COLUM_PARTIAL_PRODUCTS];
             }
             else{
-                acumulated += steps[i ][COLUM_PARTIAL_PRODUCTS];
+                accumulated += steps[i ][COLUM_PARTIAL_PRODUCTS];
 
             }
-            steps[i][COLUM_ACCUMULATED_PRODUCT] = acumulated;
+            steps[i][COLUM_ACCUMULATED_PRODUCT] = accumulated;
         }
 
         return steps;

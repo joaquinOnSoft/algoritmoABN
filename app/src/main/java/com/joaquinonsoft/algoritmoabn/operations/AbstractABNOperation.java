@@ -19,14 +19,26 @@
 package com.joaquinonsoft.algoritmoabn.operations;
 
 public abstract class AbstractABNOperation implements ABNOperarion {
+    public static final int NUM_COLUMNS = 3;
+
     protected int operand1;
     protected int operand2;
+
+    protected int steps[][];
+
 
 
     public AbstractABNOperation(int operand1, int operand2){
         this.operand1 = operand1;
         this.operand2 = operand2;
+
+        steps = new int[getNumRows()][NUM_COLUMNS];
+        initialize();
     }
+
+    protected abstract void initialize();
+
+    protected abstract int getNumRows();
 
     @Override
     public int getOperand1() {
