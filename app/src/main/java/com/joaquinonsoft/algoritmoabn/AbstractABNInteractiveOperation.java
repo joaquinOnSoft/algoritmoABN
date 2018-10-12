@@ -27,9 +27,6 @@ public abstract class AbstractABNInteractiveOperation
         extends AbstractABNOperation
         implements ABNInteractiveOperation {
 
-    public static final int ROW = 0;
-    public static final int COL = 1;
-
     protected int currentRow;
     protected int currentCol;
 
@@ -37,24 +34,26 @@ public abstract class AbstractABNInteractiveOperation
         super(operand1, operand2);
     }
 
-
     @Override
     public int[] getCurrentPos() {
-        return new int[0];
+        int pos[] = {currentRow, currentCol};
+        return pos;
     }
 
     @Override
     public int getCurrentValue() {
-        return 0;
+        return steps[currentRow][currentCol];
     }
 
-    @Override
-    public void reset() {
-
-    }
-
-    @Override
-    public void reset(int row, int col) {
+    public void next(){
+        if(currentCol < NUM_COLUMNS){
+            currentCol++;
+        }
+        else{
+            //TODO throw exception if exceeds the max. number of rows.
+            currentRow++;
+            currentCol = 0;
+        }
 
     }
 }

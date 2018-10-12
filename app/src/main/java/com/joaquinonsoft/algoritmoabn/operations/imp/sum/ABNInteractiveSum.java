@@ -48,6 +48,7 @@ package com.joaquinonsoft.algoritmoabn.operations.imp.sum;
  * </pre>
  * SEE: http://lapandilladelarejilla.es/operaciones/suma-abn/
  */
+import com.joaquinonsoft.algoritmoabn.AbstractABNInteractiveOperation;
 import com.joaquinonsoft.algoritmoabn.operations.AbstractABNOperation;
 
 /**
@@ -68,7 +69,7 @@ import com.joaquinonsoft.algoritmoabn.operations.AbstractABNOperation;
  *
  * SEE: http://lapandilladelarejilla.es/operaciones/suma-abn/
  */
-public class ABNInteractiveSum extends AbstractABNOperation {
+public class ABNInteractiveSum extends AbstractABNInteractiveOperation {
 
     public static final int COLUMN_TAKE = 0;
     public static final int COLUMN_SUM = 1;
@@ -80,9 +81,12 @@ public class ABNInteractiveSum extends AbstractABNOperation {
 
     @Override
     protected void initialize() {
-        steps[0][0] = 0;
-        steps[0][1] = operand1;
-        steps[0][2] = operand2;
+        steps[0][COLUMN_TAKE] = 0;
+        steps[0][COLUMN_SUM] = operand1;
+        steps[0][COLUMN_REMAINS] = operand2;
+
+        currentRow = 1;
+        currentCol = 0;
     }
 
     @Override
@@ -91,28 +95,17 @@ public class ABNInteractiveSum extends AbstractABNOperation {
     }
 
     @Override
+    public int[] getValidValues() {
+        return new int[0];
+    }
+
+    @Override
+    public boolean isSolved() {
+        return false;
+    }
+
+    @Override
     public int[][] getSteps() {
-        int nSteps = 0;
-        int remains;
-        int takes;
-
-        do{
-            takes = steps[nSteps][COLUMN_REMAINS] % 10;
-            if(takes == 0){
-                takes = steps[nSteps][COLUMN_REMAINS];
-                remains = 0;
-            }
-            else {
-                remains = (steps[nSteps][COLUMN_REMAINS] / 10) * 10;
-            }
-
-            nSteps++;
-
-            steps[nSteps][COLUMN_TAKE] = takes;
-            steps[nSteps][COLUMN_SUM] = steps[nSteps - 1][COLUMN_SUM] + takes;
-            steps[nSteps][COLUMN_REMAINS] = remains;
-        }while(steps[nSteps][COLUMN_REMAINS] != 0);
-
         return steps;
     }
 

@@ -27,8 +27,4 @@ public interface ABNInteractiveOperation {
     int[] getValidValues();
 
     boolean isSolved();
-
-    void reset();
-
-    void reset(int row, int col);
 }

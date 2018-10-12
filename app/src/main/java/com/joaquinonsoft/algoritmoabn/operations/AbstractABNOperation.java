@@ -26,8 +26,6 @@ public abstract class AbstractABNOperation implements ABNOperarion {
 
     protected int steps[][];
 
-
-
     public AbstractABNOperation(int operand1, int operand2){
         this.operand1 = operand1;
         this.operand2 = operand2;
