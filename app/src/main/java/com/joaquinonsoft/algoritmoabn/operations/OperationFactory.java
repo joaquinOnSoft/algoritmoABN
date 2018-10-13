@@ -54,7 +54,7 @@ public class OperationFactory {
                 return new ABNMultiplicationByAFigure(operand1,operand2);
             case DIVISONx1DIGIT:
                 operand1 = getNumberInInterval(10,100);
-                operand2 = getNumberInInterval(0,10);
+                operand2 = getNumberInInterval(1,10);
                 return new ABNDivisionByAFigure(operand1, operand2);
             default:
                 return null;

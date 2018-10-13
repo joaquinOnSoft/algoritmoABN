@@ -19,12 +19,14 @@
  */
 package com.joaquinonsoft.algoritmoabn.operations;
 
+import java.util.List;
+
 public interface ABNInteractiveOperation {
     int[] getCurrentPos();
 
     int getCurrentValue();
 
-    int[] getValidValues();
+    List<Integer> getValidValues();
 
     boolean isSolved();
 }
