@@ -38,7 +38,7 @@ class ABNSumTest {
     }
 
     @Test
-    fun manualAddition() {
+    fun interactiveSum() {
         var expectedPos = arrayOf(
                 intArrayOf(1, 0), intArrayOf(1, 1), intArrayOf(1, 2),
                 intArrayOf(2, 0), intArrayOf(2, 1), intArrayOf(2, 2)
@@ -65,10 +65,14 @@ class ABNSumTest {
             sum.currentValue = expectedValues[i]
 
             assertNotEquals(-1, validValues.indexOf(expectedValues[i]))
-            assertTrue(sum.hasNext())
 
-            sum.next()
+            if(sum.hasNext()){
+                assertFalse(sum.isSolved)
+                sum.next()
+            }
         }
+
+        assertTrue(sum.isSolved)
     }
 
     @Test

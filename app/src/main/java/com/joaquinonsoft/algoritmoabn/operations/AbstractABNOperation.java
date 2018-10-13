@@ -89,12 +89,15 @@ public abstract class AbstractABNOperation implements ABNOperarion {
     public boolean hasNext(){
         boolean next = false;
 
-        if(currentCol > NUM_COLUMNS){
-            next = true;
+        if(!isSolved()){
+            if(currentCol > NUM_COLUMNS){
+                next = true;
+            }
+            else if (currentRow < (getNumRows() - 1)){
+                next = true;
+            }
         }
-        else if (currentRow < (getNumRows() - 1)){
-            next = true;
-        }
+
 
         return next;
     }

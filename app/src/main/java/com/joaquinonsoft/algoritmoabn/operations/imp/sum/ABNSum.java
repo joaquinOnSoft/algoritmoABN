@@ -134,13 +134,16 @@ public class ABNSum extends AbstractABNOperation {
                 values.add(steps[currentRow-1][COLUMN_REMAINS] - steps[currentRow][COLUMN_TAKE]);
                 break;
         }
-        //TODO here
+
         return values;
     }
 
     @Override
     public boolean isSolved() {
-        return false;
+        System.out.println("Sum: " + steps[currentRow][COLUMN_SUM]);
+        System.out.println("Remains: " + steps[currentCol][COLUMN_REMAINS]);
+        return steps[currentRow][COLUMN_SUM] == getResult() &&
+                steps[currentCol][COLUMN_REMAINS] == 0;
     }
 
 }
