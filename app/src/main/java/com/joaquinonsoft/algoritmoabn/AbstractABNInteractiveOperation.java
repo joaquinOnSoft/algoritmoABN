@@ -45,6 +45,19 @@ public abstract class AbstractABNInteractiveOperation
         return steps[currentRow][currentCol];
     }
 
+    public boolean hasNext(){
+        boolean next = false;
+
+        if(currentCol > NUM_COLUMNS){
+            next = true;
+        }
+        else if (currentRow < (getNumRows() - 1)){
+            next = true;
+        }
+
+        return next;
+    }
+
     public void next(){
         if(currentCol < NUM_COLUMNS){
             currentCol++;

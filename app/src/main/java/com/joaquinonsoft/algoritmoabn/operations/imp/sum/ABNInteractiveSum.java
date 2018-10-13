@@ -18,6 +18,14 @@
  */
 package com.joaquinonsoft.algoritmoabn.operations.imp.sum;
 
+import android.os.Build;
+
+import com.joaquinonsoft.algoritmoabn.AbstractABNInteractiveOperation;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * <strong>Add Numbers of Two Figures with Open Algorithms Based on Numbers</strong>
  *
@@ -48,27 +56,6 @@ package com.joaquinonsoft.algoritmoabn.operations.imp.sum;
  * </pre>
  * SEE: http://lapandilladelarejilla.es/operaciones/suma-abn/
  */
-import com.joaquinonsoft.algoritmoabn.AbstractABNInteractiveOperation;
-import com.joaquinonsoft.algoritmoabn.operations.AbstractABNOperation;
-
-/**
- * Add Numbers of Two Figures with Open Algorithms Based on Numbers
- *  
- * The sum of two numbers with open algorithms based on numbers consists of
- * go passing amounts from the lowest number to the highest. The amount to spend will depend
- * of the domain that each student has, since we are talking about a methodology
- * Open that adapts to each level and student. The best way to explain how
- * adding two-digit numbers with the methodology of open algorithms is an example.
- *
- * If we start with the following problem: Pedro has 56 euros and Antonio 28
- * How many euros do you have between the two? The operation could be solved in the following way:
- *  
- * We start from a grid of 3 columns: in the 1st column we will put the amount that we are going
- * taking, in the 3rd column, what we have left to pass and in the 2nd column the accumulated result
- * of what we have taken with what we have.
- *
- * SEE: http://lapandilladelarejilla.es/operaciones/suma-abn/
- */
 public class ABNInteractiveSum extends AbstractABNInteractiveOperation {
 
     public static final int COLUMN_TAKE = 0;
@@ -95,8 +82,11 @@ public class ABNInteractiveSum extends AbstractABNInteractiveOperation {
     }
 
     @Override
-    public int[] getValidValues() {
-        return new int[0];
+    public List<Integer> getValidValues() {
+        List<Integer> values = new LinkedList<>();
+
+        //TODO here
+        return values;
     }
 
     @Override
