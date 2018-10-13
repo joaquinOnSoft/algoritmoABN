@@ -32,7 +32,7 @@ class ABNMultiplicationByAFigureTest {
     }
 
     @Test
-    fun getSteps() {
+    fun getAutoCalculatedSteps() {
         val expectedResult = arrayOf(
                 intArrayOf(238, 8, 0),
                 intArrayOf(200, 1600, 1600),
@@ -43,7 +43,7 @@ class ABNMultiplicationByAFigureTest {
         val rows = expectedResult.size
         val columns = expectedResult[0].size
 
-        val result = multiplication.steps
+        val result = multiplication.autoCalculatedSteps
 
         for(i in 0 until rows){
             for(j in 0 until columns){

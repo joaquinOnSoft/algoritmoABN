@@ -33,7 +33,7 @@ class ABNSubtractionTest {
     }
 
     @Test
-    fun getSteps() {
+    fun getAutoCalculatedSteps() {
         val expectedResult = arrayOf(
                 intArrayOf(0, 76, 39),
                 intArrayOf(30, 46, 9),
@@ -43,7 +43,7 @@ class ABNSubtractionTest {
         val rows = expectedResult.size
         val columns = expectedResult[0].size
 
-        val result = subtraction.steps
+        val result = subtraction.autoCalculatedSteps
 
         for(i in 0 until rows){
             for(j in 0 until columns){
@@ -55,10 +55,15 @@ class ABNSubtractionTest {
 
     @Test
     fun toStr() {
+        //val str = "[\n" +
+        //        "{0,76,39},\n" +
+        //        "{30,46,9},\n" +
+        //        "{9,37,0}\n" +
+        //        "]"
+
         val str = "[\n" +
                 "{0,76,39},\n" +
-                "{30,46,9},\n" +
-                "{9,37,0}\n" +
+                "{0,0,0}\n" +
                 "]"
 
         assertEquals(str, subtraction.toString())

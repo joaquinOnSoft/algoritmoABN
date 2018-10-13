@@ -38,7 +38,41 @@ class ABNSumTest {
     }
 
     @Test
-    fun getSteps() {
+    fun manualAddition() {
+        var expectedPos = arrayOf(
+                intArrayOf(1, 0), intArrayOf(1, 1), intArrayOf(1, 2),
+                intArrayOf(2, 0), intArrayOf(2, 1), intArrayOf(2, 2)
+        )
+
+        var expectedValues = intArrayOf(
+                 7, 61, 20,
+                20, 81, 0
+        )
+
+        var size:Int = expectedPos.size
+
+
+        var currentPos:IntArray
+        var validValues:List<Int>
+
+        for (i in 0 until size){
+            currentPos = sum.currentPos
+
+            assertArrayEquals(expectedPos[i], currentPos)
+
+            validValues = sum.validValues
+
+            sum.currentValue = expectedValues[i]
+
+            assertNotEquals(-1, validValues.indexOf(expectedValues[i]))
+            assertTrue(sum.hasNext())
+
+            sum.next()
+        }
+    }
+
+    @Test
+    fun getAutoCalculatedSteps() {
         val expectedResult = arrayOf(
                 intArrayOf(0, 54, 27),
                 intArrayOf(7, 61, 20),
@@ -48,7 +82,7 @@ class ABNSumTest {
         val rows = expectedResult.size
         val columns = expectedResult[0].size
 
-        val result = sum.steps
+        val result = sum.autoCalculatedSteps
 
         for(i in 0 until rows){
             for(j in 0 until columns){
@@ -60,11 +94,17 @@ class ABNSumTest {
 
     @Test
     fun toStr() {
+        //val str = "[\n" +
+        //        "{0,54,27},\n" +
+        //        "{7,61,20},\n" +
+        //        "{20,81,0}\n" +
+        //        "]"
+
         val str = "[\n" +
                 "{0,54,27},\n" +
-                "{7,61,20},\n" +
-                "{20,81,0}\n" +
+                "{0,0,0}\n" +
                 "]"
+
 
         assertEquals(str, sum.toString())
     }

@@ -20,6 +20,8 @@ package com.joaquinonsoft.algoritmoabn.operations.imp.subtraction;
 
 import com.joaquinonsoft.algoritmoabn.operations.AbstractABNOperation;
 
+import java.util.List;
+
 /**
  *
  * Restar Números de Dos Cifras con Algoritmos Abiertos Basados en Números
@@ -79,29 +81,48 @@ public class ABNSubtraction extends AbstractABNOperation {
     }
 
     @Override
-    public int[][] getSteps() {
+    public int[][] getAutoCalculatedSteps() {
         int nSteps = 0;
         int remains;
         int takes;
 
+        int[][] autoCalculatedsteps = new int[getNumRows()][NUM_COLUMNS];
+
+        autoCalculatedsteps[0][0] = 0;
+        autoCalculatedsteps[0][1] = operand1;
+        autoCalculatedsteps[0][2] = operand2;
+
         do{
-            takes = (steps[nSteps][COLUMN_REMAINS] / 10) * 10;
+            takes = (autoCalculatedsteps[nSteps][COLUMN_REMAINS] / 10) * 10;
             if(takes == 0){
-                takes = steps[nSteps][COLUMN_REMAINS];
+                takes = autoCalculatedsteps[nSteps][COLUMN_REMAINS];
                 remains = 0;
             }
             else {
-                remains = steps[nSteps][COLUMN_REMAINS] % 10;
+                remains = autoCalculatedsteps[nSteps][COLUMN_REMAINS] % 10;
             }
 
             nSteps++;
 
-            steps[nSteps][COLUMN_TAKE] = takes;
-            steps[nSteps][COLUMN_SUM] = steps[nSteps - 1][COLUMN_SUM] - takes;
-            steps[nSteps][COLUMN_REMAINS] = remains;
-        }while(steps[nSteps][COLUMN_REMAINS] != 0);
+            autoCalculatedsteps[nSteps][COLUMN_TAKE] = takes;
+            autoCalculatedsteps[nSteps][COLUMN_SUM] = autoCalculatedsteps[nSteps - 1][COLUMN_SUM] - takes;
+            autoCalculatedsteps[nSteps][COLUMN_REMAINS] = remains;
+        }while(autoCalculatedsteps[nSteps][COLUMN_REMAINS] != 0);
 
-        return steps;
+        return autoCalculatedsteps;
 
+    }
+
+
+    @Override
+    public List<Integer> getValidValues() {
+        //TODO implement
+        return null;
+    }
+
+    @Override
+    public boolean isSolved() {
+        //TODO implement
+        return false;
     }
 }

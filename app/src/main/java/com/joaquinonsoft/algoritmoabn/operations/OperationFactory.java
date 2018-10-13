@@ -36,8 +36,9 @@ public class OperationFactory {
     }
 
     public ABNOperarion getOperation(Operarion op){
-        int operand1 = 0;
-        int operand2 = 0;
+        int operand1;
+        int operand2;
+
 
         switch (op){
             case SUM:
@@ -59,6 +60,7 @@ public class OperationFactory {
             default:
                 return null;
         }
+
     }
 
     private int getNumberInInterval(int minIncluded, int maxExcluded){

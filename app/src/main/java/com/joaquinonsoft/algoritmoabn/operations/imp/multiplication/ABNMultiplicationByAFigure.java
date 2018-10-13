@@ -21,6 +21,8 @@ package com.joaquinonsoft.algoritmoabn.operations.imp.multiplication;
 import com.joaquinonsoft.algoritmoabn.operations.AbstractABNOperation;
 import com.joaquinonsoft.algoritmoabn.operations.Decomposition;
 
+import java.util.List;
+
 /**
  * In the ABN algorithm for the multiplication where the multiplier is of a
  * single figure we need three columns and as many rows as decompositions in
@@ -87,43 +89,60 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
     }
 
     @Override
-    public int[][] getSteps() {
+    public int[][] getAutoCalculatedSteps() {
         int row = 1;
+
+        int[][] autoCalculatedSteps = new int[getNumRows()][NUM_COLUMNS];
+        autoCalculatedSteps[0][COLUM_MULTIPLYING_IN_UNITS] = operand1;
+        autoCalculatedSteps[0][COLUM_PARTIAL_PRODUCTS] = operand2;
 
         Decomposition decomp = new Decomposition(operand1);
         if(decomp.getThousands() > 0){
-            steps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getUnitsInThousands();
-            steps[row][COLUM_PARTIAL_PRODUCTS] = steps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
+            autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getUnitsInThousands();
+            autoCalculatedSteps[row][COLUM_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
             row++;
         }
 
         if(decomp.getHundreds() > 0){
-            steps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getUnitsInHundreds();
-            steps[row][COLUM_PARTIAL_PRODUCTS] = steps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
+            autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getUnitsInHundreds();
+            autoCalculatedSteps[row][COLUM_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
             row++;
         }
 
         if(decomp.getTens() > 0){
-            steps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getUnitsInTens();
-            steps[row][COLUM_PARTIAL_PRODUCTS] = steps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
+            autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getUnitsInTens();
+            autoCalculatedSteps[row][COLUM_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
             row++;
         }
 
-        steps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getOnes();
-        steps[row][COLUM_PARTIAL_PRODUCTS] = steps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
+        autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getOnes();
+        autoCalculatedSteps[row][COLUM_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
 
         int accumulated = 0;
         for(int i=1; i<=row; i++){
             if(i == 1){
-                accumulated = steps[i][COLUM_PARTIAL_PRODUCTS];
+                accumulated = autoCalculatedSteps[i][COLUM_PARTIAL_PRODUCTS];
             }
             else{
-                accumulated += steps[i ][COLUM_PARTIAL_PRODUCTS];
+                accumulated += autoCalculatedSteps[i ][COLUM_PARTIAL_PRODUCTS];
 
             }
-            steps[i][COLUM_ACCUMULATED_PRODUCT] = accumulated;
+            autoCalculatedSteps[i][COLUM_ACCUMULATED_PRODUCT] = accumulated;
         }
 
-        return steps;
+        return autoCalculatedSteps;
+    }
+
+
+    @Override
+    public List<Integer> getValidValues() {
+        //TODO implement
+        return null;
+    }
+
+    @Override
+    public boolean isSolved() {
+        //TODO implement
+        return false;
     }
 }

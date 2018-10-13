@@ -32,7 +32,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-## About Joaquin On Software
+## About Joaquín On Software
 
 Joaquín On Software is a personal web page where I write about technical topics
 

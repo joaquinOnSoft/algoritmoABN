@@ -20,6 +20,9 @@ package com.joaquinonsoft.algoritmoabn.operations.imp.sum;
 
 import com.joaquinonsoft.algoritmoabn.operations.AbstractABNOperation;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * <strong>Add Numbers of Two Figures with Open Algorithms Based on Numbers</strong>
  *
@@ -65,6 +68,10 @@ public class ABNSum extends AbstractABNOperation {
         steps[0][0] = 0;
         steps[0][1] = operand1;
         steps[0][2] = operand2;
+
+
+        currentRow = 1;
+        currentCol = 0;
     }
 
     @Override
@@ -73,34 +80,67 @@ public class ABNSum extends AbstractABNOperation {
     }
 
     @Override
-    public int[][] getSteps() {
+    public int[][] getAutoCalculatedSteps() {
         int nSteps = 0;
         int remains;
         int takes;
 
+        int autoCalculatedSteps[][] = new int[getNumRows()][NUM_COLUMNS];
+        autoCalculatedSteps[0][0] = 0;
+        autoCalculatedSteps[0][1] = operand1;
+        autoCalculatedSteps[0][2] = operand2;
+
         do{
-            takes = steps[nSteps][COLUMN_REMAINS] % 10;
+            takes = autoCalculatedSteps[nSteps][COLUMN_REMAINS] % 10;
             if(takes == 0){
-                takes = steps[nSteps][COLUMN_REMAINS];
+                takes = autoCalculatedSteps[nSteps][COLUMN_REMAINS];
                 remains = 0;
             }
             else {
-                remains = (steps[nSteps][COLUMN_REMAINS] / 10) * 10;
+                remains = (autoCalculatedSteps[nSteps][COLUMN_REMAINS] / 10) * 10;
             }
 
             nSteps++;
 
-            steps[nSteps][COLUMN_TAKE] = takes;
-            steps[nSteps][COLUMN_SUM] = steps[nSteps - 1][COLUMN_SUM] + takes;
-            steps[nSteps][COLUMN_REMAINS] = remains;
-        }while(steps[nSteps][COLUMN_REMAINS] != 0);
+            autoCalculatedSteps[nSteps][COLUMN_TAKE] = takes;
+            autoCalculatedSteps[nSteps][COLUMN_SUM] = autoCalculatedSteps[nSteps - 1][COLUMN_SUM] + takes;
+            autoCalculatedSteps[nSteps][COLUMN_REMAINS] = remains;
+        }while(autoCalculatedSteps[nSteps][COLUMN_REMAINS] != 0);
 
-        return steps;
+        return autoCalculatedSteps;
     }
 
     @Override
     public int getResult() {
         return operand1 + operand2;
+    }
+
+
+    @Override
+    public List<Integer> getValidValues() {
+        List<Integer> values = new LinkedList<>();
+
+        switch (currentCol){
+            case COLUMN_TAKE:
+                int remains = steps[currentRow-1][COLUMN_REMAINS];
+                for(int i=0; i<= remains; ++i){
+                    values.add(i);
+                }
+                break;
+            case COLUMN_SUM:
+                values.add(steps[currentRow][COLUMN_TAKE] + steps[currentRow-1][COLUMN_SUM]);
+                break;
+            case COLUMN_REMAINS:
+                values.add(steps[currentRow-1][COLUMN_REMAINS] - steps[currentRow][COLUMN_TAKE]);
+                break;
+        }
+        //TODO here
+        return values;
+    }
+
+    @Override
+    public boolean isSolved() {
+        return false;
     }
 
 }

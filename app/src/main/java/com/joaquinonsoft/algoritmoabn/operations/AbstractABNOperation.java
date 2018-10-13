@@ -26,6 +26,9 @@ public abstract class AbstractABNOperation implements ABNOperarion {
 
     protected int steps[][];
 
+    protected int currentRow;
+    protected int currentCol;
+
     public AbstractABNOperation(int operand1, int operand2){
         this.operand1 = operand1;
         this.operand2 = operand2;
@@ -61,6 +64,53 @@ public abstract class AbstractABNOperation implements ABNOperarion {
     public boolean isValidResult(int result){
         return result == getResult();
     }
+
+    @Override
+    public int[][] getSteps() {
+        return steps;
+    }
+
+    @Override
+    public int[] getCurrentPos() {
+        int pos[] = {currentRow, currentCol};
+        return pos;
+    }
+
+    @Override
+    public void setCurrentValue(int value){
+        steps[currentRow][currentCol] = value;
+    }
+
+    @Override
+    public int getCurrentValue() {
+        return steps[currentRow][currentCol];
+    }
+
+    public boolean hasNext(){
+        boolean next = false;
+
+        if(currentCol > NUM_COLUMNS){
+            next = true;
+        }
+        else if (currentRow < (getNumRows() - 1)){
+            next = true;
+        }
+
+        return next;
+    }
+
+    public void next(){
+        if( currentCol < (NUM_COLUMNS - 1) ){
+            currentCol++;
+        }
+        else{
+            //TODO throw exception if exceeds the max. number of rows.
+            currentRow++;
+            currentCol = 0;
+        }
+
+    }
+
 
     @Override
     public String toString() {

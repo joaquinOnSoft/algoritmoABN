@@ -18,6 +18,8 @@
  */
 package com.joaquinonsoft.algoritmoabn.operations;
 
+import java.util.List;
+
 public interface ABNOperarion {
     int getOperand1();
 
@@ -29,5 +31,25 @@ public interface ABNOperarion {
 
     int getResult();
 
+    /**
+     * Provides the steps given by the user to resolve the operation
+     * @return array with the steps given to resolve the operation
+     **/
     int[][] getSteps();
+
+    /**
+     * Provide a valid solution for this operations calculated by the computer
+     * @return array with the steps given to resolve the operation
+     **/
+    int[][] getAutoCalculatedSteps();
+
+    int[] getCurrentPos();
+
+    void setCurrentValue(int value);
+
+    int getCurrentValue();
+
+    List<Integer> getValidValues();
+
+    boolean isSolved();
 }

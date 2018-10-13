@@ -21,6 +21,8 @@ package com.joaquinonsoft.algoritmoabn.operations.imp.division;
 import com.joaquinonsoft.algoritmoabn.operations.AbstractABNOperation;
 import com.joaquinonsoft.algoritmoabn.operations.Decomposition;
 
+import java.util.List;
+
 /**
  * To solve the division using open algorithms, we start with a grid of 3 columns:
  *
@@ -82,36 +84,43 @@ public class ABNDivisionByAFigure extends AbstractABNOperation {
     }
 
     @Override
-    public int[][] getSteps() {
+    public int[][] getAutoCalculatedSteps() {
+        int[][] autoCalculatedSteps = new int[getNumRows()][NUM_COLUMNS];
+
+        autoCalculatedSteps[0][COLUMN_REMAINDER] = operand1;
+        autoCalculatedSteps[0][COLUMN_TAKING] = operand2;
+        autoCalculatedSteps[0][COLUMN_QUOTIENT] = 0;
+
         int row = 1;
         int remainder;
         int quotient;
+
 
         do{
             if(row == 1){
                 remainder = operand1;
             }
             else{
-                remainder = steps[row - 1][COLUMN_REMAINDER] % steps[row -1][COLUMN_TAKING];
+                remainder = autoCalculatedSteps[row - 1][COLUMN_REMAINDER] % autoCalculatedSteps[row -1][COLUMN_TAKING];
             }
 
-            steps[row][COLUMN_REMAINDER] = remainder;
+            autoCalculatedSteps[row][COLUMN_REMAINDER] = remainder;
 
             quotient = getEstimation(remainder, operand2);
 
-            steps[row][COLUMN_TAKING] = quotient;
-            steps[row][COLUMN_QUOTIENT] = quotient / operand2;
+            autoCalculatedSteps[row][COLUMN_TAKING] = quotient;
+            autoCalculatedSteps[row][COLUMN_QUOTIENT] = quotient / operand2;
 
             row++;
         }while(remainder > operand2);
 
         quotient = 0;
         for(int i=0; i<row; i++){
-            quotient += steps[i][COLUMN_QUOTIENT];
+            quotient += autoCalculatedSteps[i][COLUMN_QUOTIENT];
         }
-        steps[row - 1][COLUMN_QUOTIENT] = quotient;
+        autoCalculatedSteps[row - 1][COLUMN_QUOTIENT] = quotient;
 
-        return steps;
+        return autoCalculatedSteps;
     }
 
 
@@ -144,5 +153,17 @@ public class ABNDivisionByAFigure extends AbstractABNOperation {
         }
 
         return estimation;
+    }
+
+    @Override
+    public List<Integer> getValidValues() {
+        //TODO implement
+        return null;
+    }
+
+    @Override
+    public boolean isSolved() {
+        //TODO implement
+        return false;
     }
 }

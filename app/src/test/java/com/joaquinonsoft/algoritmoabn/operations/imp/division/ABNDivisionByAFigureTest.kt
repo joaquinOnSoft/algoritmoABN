@@ -37,7 +37,7 @@ class ABNDivisionByAFigureTest {
     }
 
     @Test
-    fun getSteps() {
+    fun getAutoCalculatedSteps() {
         val expectedResult = arrayOf(
                 intArrayOf(84, 5, 0),
                 intArrayOf(84, 50, 10),
@@ -48,7 +48,7 @@ class ABNDivisionByAFigureTest {
         val rows = expectedResult.size
         val columns = expectedResult[0].size
 
-        val result = division.steps
+        val result = division.autoCalculatedSteps
 
         for(i in 0 until rows){
             for(j in 0 until columns){
