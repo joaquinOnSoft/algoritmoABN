@@ -86,11 +86,14 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
     protected void initialize() {
         steps[0][COLUM_MULTIPLYING_IN_UNITS] = operand1;
         steps[0][COLUM_PARTIAL_PRODUCTS] = operand2;
+
+        currentRow = 1;
+        currentCol = 0;
     }
 
     @Override
     protected int getNumRows() {
-        return 4;
+        return 32;
     }
 
     @Override
@@ -150,7 +153,12 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
 
         switch (currentCol){
             case COLUM_MULTIPLYING_IN_UNITS:
-                int max = operand1 - steps[currentRow - 1][COLUM_ACCUMULATED_PRODUCT];
+                int max = operand1;
+
+                if(currentRow >= 2){
+                     max = steps[currentRow - 1][COLUM_MULTIPLYING_IN_UNITS] - steps[currentRow][COLUM_MULTIPLYING_IN_UNITS];
+                }
+
                 for(int i=0; i<= max; ++i){
                     values.add(i);
                 }
@@ -160,10 +168,14 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
                 break;
             case COLUM_ACCUMULATED_PRODUCT:
                 if(currentRow == 1){
-                    values.add(steps[currentRow][COLUM_PARTIAL_PRODUCTS]);
+                    values.add(steps[currentRow][COLUM_MULTIPLYING_IN_UNITS] * operand2);
                 }
                 else{
-                    values.add(steps[currentRow][COLUM_PARTIAL_PRODUCTS] + steps[currentRow - 1][COLUM_PARTIAL_PRODUCTS]);
+                    int partialMult=0;
+                    for(int row=1; row<=currentRow; row++){
+                        partialMult += steps[row][COLUM_PARTIAL_PRODUCTS];
+                    }
+                    values.add(partialMult);
                 }
                 break;
         }
@@ -177,11 +189,11 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
                 return false;
             }
 
-            if(steps[row][COLUM_PARTIAL_PRODUCTS] != (steps[row - 1][COLUM_PARTIAL_PRODUCTS] * operand2)){
+            if(steps[row][COLUM_PARTIAL_PRODUCTS] != (steps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2)){
                 return false;
             }
 
-            if(steps[row][COLUM_ACCUMULATED_PRODUCT] != (steps[row][COLUM_PARTIAL_PRODUCTS] + steps[row - 1][COLUM_PARTIAL_PRODUCTS])){
+            if(steps[row][COLUM_ACCUMULATED_PRODUCT] != (steps[row][COLUM_PARTIAL_PRODUCTS] + steps[row - 1][COLUM_ACCUMULATED_PRODUCT])){
                 return false;
             }
         }

@@ -51,4 +51,44 @@ class ABNMultiplicationByAFigureTest {
             }
         }
     }
+
+    @Test
+    fun interactiveMultiplication(){
+        var expectedPos = arrayOf(
+                intArrayOf(1, 0), intArrayOf(1, 1), intArrayOf(1, 2),
+                intArrayOf(2, 0), intArrayOf(2, 1), intArrayOf(2, 2),
+                intArrayOf(3, 0), intArrayOf(3, 1), intArrayOf(3, 2)
+        )
+
+        var expectedValues = intArrayOf(
+                200, 1600, 1600,
+                 30,  240, 1840,
+                  8,   64, 1904
+        )
+
+        var size:Int = expectedPos.size
+
+
+        var currentPos:IntArray
+        var validValues:List<Int>
+
+        for (i in 0 until size){
+            currentPos = multiplication.currentPos
+
+            assertArrayEquals(expectedPos[i], currentPos)
+
+            validValues = multiplication.validValues
+
+            multiplication.currentValue = expectedValues[i]
+
+            assertNotEquals(-1, validValues.indexOf(expectedValues[i]))
+
+            if(multiplication.hasNext()){
+                assertFalse(multiplication.isSolved)
+                multiplication.next()
+            }
+        }
+
+        assertTrue(multiplication.isSolved)
+    }
 }
