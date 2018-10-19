@@ -140,8 +140,25 @@ public class ABNSum extends AbstractABNOperation {
 
     @Override
     public boolean isSolved() {
-        return steps[currentRow][COLUMN_SUM] == getResult() &&
-                steps[currentCol][COLUMN_REMAINS] == 0;
+        for(int row=1; row<currentRow; row++){
+            if(steps[row][COLUMN_TAKE] > steps[row - 1][COLUMN_REMAINS]){
+                return false;
+            }
+
+            if(steps[row][COLUMN_SUM] != (steps[row][COLUMN_TAKE] + steps[row-1][COLUMN_SUM])){
+                return false;
+            }
+
+            if((steps[currentRow][COLUMN_TAKE] + steps[currentRow][COLUMN_REMAINS]) != steps[currentRow - 1][COLUMN_REMAINS]){
+                return false;
+            }
+        }
+
+        if(steps[currentRow][COLUMN_SUM] != (operand1 + operand2)){
+            return false;
+        }
+
+        return true;
     }
 
 }

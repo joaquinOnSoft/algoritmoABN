@@ -21,6 +21,7 @@ package com.joaquinonsoft.algoritmoabn.operations.imp.multiplication;
 import com.joaquinonsoft.algoritmoabn.operations.AbstractABNOperation;
 import com.joaquinonsoft.algoritmoabn.operations.Decomposition;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -61,6 +62,15 @@ import java.util.List;
  *      30 |  240 | 1840
  *       8 |   64 | 1904
  * </pre>
+ *
+ * <pre>
+ *    5429 |     6
+ *    5000 | 30000 |
+ *     400 |  2400 | 32400
+ *      20 |   120 | 32520
+ *       9 |    54 | 32574
+ * </pre>
+ * See: http://lapandilladelarejilla.es/operaciones/multiplicacion-abn/
  */
 public class ABNMultiplicationByAFigure extends AbstractABNOperation {
 
@@ -136,13 +146,50 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
 
     @Override
     public List<Integer> getValidValues() {
-        //TODO implement
-        return null;
+        List<Integer> values = new LinkedList<>();
+
+        switch (currentCol){
+            case COLUM_MULTIPLYING_IN_UNITS:
+                int max = operand1 - steps[currentRow - 1][COLUM_ACCUMULATED_PRODUCT];
+                for(int i=0; i<= max; ++i){
+                    values.add(i);
+                }
+                break;
+            case COLUM_PARTIAL_PRODUCTS:
+                values.add(steps[currentRow][COLUM_MULTIPLYING_IN_UNITS] * operand2);
+                break;
+            case COLUM_ACCUMULATED_PRODUCT:
+                if(currentRow == 1){
+                    values.add(steps[currentRow][COLUM_PARTIAL_PRODUCTS]);
+                }
+                else{
+                    values.add(steps[currentRow][COLUM_PARTIAL_PRODUCTS] + steps[currentRow - 1][COLUM_PARTIAL_PRODUCTS]);
+                }
+                break;
+        }
+        return values;
     }
 
     @Override
     public boolean isSolved() {
-        //TODO implement
-        return false;
+        for(int row=1; row<currentRow; row++){
+            if(steps[row][COLUM_MULTIPLYING_IN_UNITS] > steps[row - 1][COLUM_MULTIPLYING_IN_UNITS]){
+                return false;
+            }
+
+            if(steps[row][COLUM_PARTIAL_PRODUCTS] != (steps[row - 1][COLUM_PARTIAL_PRODUCTS] * operand2)){
+                return false;
+            }
+
+            if(steps[row][COLUM_ACCUMULATED_PRODUCT] != (steps[row][COLUM_PARTIAL_PRODUCTS] + steps[row - 1][COLUM_PARTIAL_PRODUCTS])){
+                return false;
+            }
+        }
+
+        if(steps[currentRow][COLUM_ACCUMULATED_PRODUCT] != (operand1 * operand2)){
+            return false;
+        }
+
+        return true;
     }
 }

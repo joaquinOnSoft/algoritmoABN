@@ -41,12 +41,12 @@ class ABNSumTest {
     fun interactiveSum() {
         var expectedPos = arrayOf(
                 intArrayOf(1, 0), intArrayOf(1, 1), intArrayOf(1, 2),
-                intArrayOf(2, 0), intArrayOf(2, 1), intArrayOf(2, 2)
+                intArrayOf(2, 0), intArrayOf(2, 1)
         )
 
         var expectedValues = intArrayOf(
                  7, 61, 20,
-                20, 81, 0
+                20, 81
         )
 
         var size:Int = expectedPos.size
