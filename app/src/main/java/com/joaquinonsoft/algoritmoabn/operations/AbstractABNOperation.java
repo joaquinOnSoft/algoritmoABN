@@ -18,7 +18,7 @@
  */
 package com.joaquinonsoft.algoritmoabn.operations;
 
-public abstract class AbstractABNOperation implements ABNOperarion {
+public abstract class AbstractABNOperation implements ABNOperation {
     public static final int NUM_COLUMNS = 3;
 
     protected int operand1;
@@ -86,6 +86,7 @@ public abstract class AbstractABNOperation implements ABNOperarion {
         return steps[currentRow][currentCol];
     }
 
+    @Override
     public boolean hasNext(){
         boolean next = false;
 
@@ -102,6 +103,7 @@ public abstract class AbstractABNOperation implements ABNOperarion {
         return next;
     }
 
+    @Override
     public void next(){
         if( currentCol < (NUM_COLUMNS - 1) ){
             currentCol++;

@@ -20,7 +20,7 @@ package com.joaquinonsoft.algoritmoabn.operations;
 
 import java.util.List;
 
-public interface ABNOperarion {
+public interface ABNOperation {
     int getOperand1();
 
     int getOperand2();
@@ -52,4 +52,8 @@ public interface ABNOperarion {
     List<Integer> getValidValues();
 
     boolean isSolved();
+
+    boolean hasNext();
+
+    void next();
 }

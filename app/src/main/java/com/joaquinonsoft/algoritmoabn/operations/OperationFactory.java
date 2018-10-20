@@ -35,7 +35,7 @@ public class OperationFactory {
     private OperationFactory() {
     }
 
-    public ABNOperarion getOperation(Operarion op){
+    public ABNOperation getOperation(Operarion op){
         int operand1;
         int operand2;
 

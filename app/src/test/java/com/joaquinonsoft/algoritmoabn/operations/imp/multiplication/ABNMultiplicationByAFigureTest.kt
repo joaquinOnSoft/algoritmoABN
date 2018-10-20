@@ -18,17 +18,21 @@
  */
 package com.joaquinonsoft.algoritmoabn.operations.imp.multiplication
 
+
+import com.joaquinonsoft.algoritmoabn.operations.ABNOperation
+import com.joaquinonsoft.algoritmoabn.operations.ABNOperationTest
 import org.junit.Test
 
 import org.junit.Assert.*
 
-class ABNMultiplicationByAFigureTest {
-    private var multiplication: ABNMultiplicationByAFigure = ABNMultiplicationByAFigure(238, 8)
+class ABNMultiplicationByAFigureTest : ABNOperationTest(){
+
+    override var operation: ABNOperation =  ABNMultiplicationByAFigure(238, 8)
 
     @Test
     fun getResult() {
         // Context of the app under test.
-        assertEquals(1904, multiplication.result)
+        assertEquals(1904, operation.result)
     }
 
     @Test
@@ -43,7 +47,7 @@ class ABNMultiplicationByAFigureTest {
         val rows = expectedResult.size
         val columns = expectedResult[0].size
 
-        val result = multiplication.autoCalculatedSteps
+        val result = operation.autoCalculatedSteps
 
         for(i in 0 until rows){
             for(j in 0 until columns){
@@ -52,43 +56,19 @@ class ABNMultiplicationByAFigureTest {
         }
     }
 
-    @Test
-    fun interactiveMultiplication(){
-        var expectedPos = arrayOf(
+    override fun getExpectedPos(): Array<IntArray> {
+        return arrayOf(
                 intArrayOf(1, 0), intArrayOf(1, 1), intArrayOf(1, 2),
                 intArrayOf(2, 0), intArrayOf(2, 1), intArrayOf(2, 2),
                 intArrayOf(3, 0), intArrayOf(3, 1), intArrayOf(3, 2)
         )
+    }
 
-        var expectedValues = intArrayOf(
+    override fun getExpectedValues(): IntArray {
+        return intArrayOf(
                 200, 1600, 1600,
-                 30,  240, 1840,
-                  8,   64, 1904
+                30,  240, 1840,
+                8,   64, 1904
         )
-
-        var size:Int = expectedPos.size
-
-
-        var currentPos:IntArray
-        var validValues:List<Int>
-
-        for (i in 0 until size){
-            currentPos = multiplication.currentPos
-
-            assertArrayEquals(expectedPos[i], currentPos)
-
-            validValues = multiplication.validValues
-
-            multiplication.currentValue = expectedValues[i]
-
-            assertNotEquals(-1, validValues.indexOf(expectedValues[i]))
-
-            if(multiplication.hasNext()){
-                assertFalse(multiplication.isSolved)
-                multiplication.next()
-            }
-        }
-
-        assertTrue(multiplication.isSolved)
     }
 }

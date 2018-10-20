@@ -28,19 +28,19 @@ class OperationFactoryTest {
 
     @Test
     fun getOperation(){
-        var sum:ABNOperarion = factory.getOperation(Operarion.SUM)
+        var sum: ABNOperation = factory.getOperation(Operarion.SUM)
         assertNotNull(sum)
         assertEquals(sum.operand1 + sum.operand2, sum.result)
 
-        var subtraction:ABNOperarion = factory.getOperation(Operarion.SUBTRACTION)
+        var subtraction: ABNOperation = factory.getOperation(Operarion.SUBTRACTION)
         assertNotNull(subtraction)
         assertEquals(subtraction.operand1 - subtraction.operand2, subtraction.result)
 
-        var multiplication:ABNOperarion = factory.getOperation(Operarion.MULTIPLICATIONx1DIGIT)
+        var multiplication: ABNOperation = factory.getOperation(Operarion.MULTIPLICATIONx1DIGIT)
         assertNotNull(multiplication)
         assertEquals(multiplication.operand1 * multiplication.operand2, multiplication.result)
 
-        var division:ABNOperarion = factory.getOperation(Operarion.DIVISONx1DIGIT)
+        var division: ABNOperation = factory.getOperation(Operarion.DIVISONx1DIGIT)
         assertNotNull(division)
         assertEquals(division.operand1 / division.operand2, division.result)
     }
