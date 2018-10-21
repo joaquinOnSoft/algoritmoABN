@@ -19,17 +19,19 @@
 package com.joaquinonsoft.algoritmoabn.operations.imp.subtraction
 
 
+import com.joaquinonsoft.algoritmoabn.operations.ABNOperation
+import com.joaquinonsoft.algoritmoabn.operations.ABNOperationTest
 import org.junit.Test
 
 import org.junit.Assert.*
 
-class ABNSubtractionTest {
-    private var subtraction: ABNSubtraction = ABNSubtraction(76, 39)
+class ABNSubtractionTest: ABNOperationTest() {
+    override var operation: ABNOperation = ABNSubtraction(76, 39)
 
     @Test
     fun getResult() {
         // Context of the app under test.
-        assertEquals(37, subtraction.result)
+        assertEquals(37, operation.result)
     }
 
     @Test
@@ -43,7 +45,7 @@ class ABNSubtractionTest {
         val rows = expectedResult.size
         val columns = expectedResult[0].size
 
-        val result = subtraction.autoCalculatedSteps
+        val result = operation.autoCalculatedSteps
 
         for(i in 0 until rows){
             for(j in 0 until columns){
@@ -53,19 +55,27 @@ class ABNSubtractionTest {
     }
 
 
+    override fun getExpectedPos(): Array<IntArray> {
+        return arrayOf(
+                intArrayOf(1, 0), intArrayOf(1, 1), intArrayOf(1, 2),
+                intArrayOf(2, 0), intArrayOf(2, 1)
+        )
+    }
+
+    override fun getExpectedValues(): IntArray {
+        return intArrayOf(
+                30, 46, 9,
+                9, 37
+        )
+    }
+
     @Test
     fun toStr() {
-        //val str = "[\n" +
-        //        "{0,76,39},\n" +
-        //        "{30,46,9},\n" +
-        //        "{9,37,0}\n" +
-        //        "]"
-
         val str = "[\n" +
                 "{0,76,39},\n" +
                 "{0,0,0}\n" +
                 "]"
 
-        assertEquals(str, subtraction.toString())
+        assertEquals(str, operation.toString())
     }
 }

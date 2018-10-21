@@ -20,33 +20,31 @@ package com.joaquinonsoft.algoritmoabn.operations.imp.subtraction;
 
 import com.joaquinonsoft.algoritmoabn.operations.AbstractABNOperation;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
  *
- * Restar Números de Dos Cifras con Algoritmos Abiertos Basados en Números
+ * The subtraction of two numbers with the methodology of Open Algorithms Based
+ * on Numbers is to remove the same amount of the two numbers until one of them
+ * remains at 0. As happens in the sum, we can adapt the amount to remove depending
+ * on the level of the student. We will explain how to subtract two-digit numbers by
+ * resorting, again, to an example.
  *
+ * If we start with the following problem: Pedro has 76 euros and he has bought a
+ * complete case that is worth 39 How many euros do you have left? The operation
+ * could be solved in the following way.
  *
- * La resta de dos números con la metodología de Algoritmos Abiertos Basados en
- * Números consiste en ir quitando la misma cantidad de los dos números hasta que uno
- * de ellos se quede en 0. Al igual que nos pasa en el suma, podemos adaptar la cantidad a
- * quitar en función del nivel del alumno. Vamos a explicar cómo restar números de dos
- * cifras recurriendo, de nuevo, a un ejemplo.
- *
- * Si partimos del siguiente problema: Pedro tiene 76 euros y se ha comprado un estuche
- * completo que vale 39 ¿Cuántos euros le quedan?, la operación podría resolverse de la
- * siguiente manera.
- *
- * Partimos de una rejilla de 3 columnas: en la 1º columna iremos poniendo la cantidad
- * que vamos quitando a los dos números y en la 2º y 3º columna la cantidad que me queda
- * tras quitarle lo de la 1º columna.
+ * We start from a grid of 3 columns: in the 1st column we will put the amount we
+ * are removing the two numbers and in the 2nd and 3rd columns the amount that
+ * I have left after removing the 1st column.
  *
  *     | 76 | -39
  *  30 | 46 |   9
  *   6 | 40 |   3
  *   3 | 37 |   0
  *
- * Otra Manera de Resolver la Resta de Dos Cifras con el Mismo Método
+ * Another Way to Solve the Subtraction of Two Figures with the Same Method
  *
  *     | 76 | -39
  *  30 | 46 |   9
@@ -56,7 +54,7 @@ import java.util.List;
  **/
 public class ABNSubtraction extends AbstractABNOperation {
     public static final int COLUMN_TAKE = 0;
-    public static final int COLUMN_SUM = 1;
+    public static final int COLUMN_SUBTRACTION = 1;
     public static final int COLUMN_REMAINS = 2;
 
     public ABNSubtraction(int operand1, int operand2) {
@@ -68,6 +66,9 @@ public class ABNSubtraction extends AbstractABNOperation {
         steps[0][0] = 0;
         steps[0][1] = operand1;
         steps[0][2] = operand2;
+
+        currentRow = 1;
+        currentCol = 0;
     }
 
     @Override
@@ -105,7 +106,7 @@ public class ABNSubtraction extends AbstractABNOperation {
             nSteps++;
 
             autoCalculatedsteps[nSteps][COLUMN_TAKE] = takes;
-            autoCalculatedsteps[nSteps][COLUMN_SUM] = autoCalculatedsteps[nSteps - 1][COLUMN_SUM] - takes;
+            autoCalculatedsteps[nSteps][COLUMN_SUBTRACTION] = autoCalculatedsteps[nSteps - 1][COLUMN_SUBTRACTION] - takes;
             autoCalculatedsteps[nSteps][COLUMN_REMAINS] = remains;
         }while(autoCalculatedsteps[nSteps][COLUMN_REMAINS] != 0);
 
@@ -116,13 +117,46 @@ public class ABNSubtraction extends AbstractABNOperation {
 
     @Override
     public List<Integer> getValidValues() {
-        //TODO implement
-        return null;
+        List<Integer> values = new LinkedList<>();
+
+        switch (currentCol){
+            case COLUMN_TAKE:
+                int remains = steps[currentRow-1][COLUMN_REMAINS];
+                for(int i=0; i<= remains; ++i){
+                    values.add(i);
+                }
+                break;
+            case COLUMN_SUBTRACTION:
+                values.add(steps[currentRow-1][COLUMN_SUBTRACTION] - steps[currentRow][COLUMN_TAKE]);
+                break;
+            case COLUMN_REMAINS:
+                values.add(steps[currentRow-1][COLUMN_REMAINS] - steps[currentRow][COLUMN_TAKE]);
+                break;
+        }
+
+        return values;
     }
 
     @Override
     public boolean isSolved() {
-        //TODO implement
-        return false;
+        for(int row=1; row<currentRow; row++){
+            if(steps[row][COLUMN_TAKE] > steps[row - 1][COLUMN_REMAINS]){
+                return false;
+            }
+
+            if(steps[row][COLUMN_SUBTRACTION] != (steps[row-1][COLUMN_SUBTRACTION] - steps[row][COLUMN_TAKE])){
+                return false;
+            }
+
+            if(steps[row][COLUMN_REMAINS] != (steps[row-1][COLUMN_REMAINS] - steps[row][COLUMN_TAKE])){
+                return false;
+            }
+        }
+
+        if(steps[currentRow][COLUMN_SUBTRACTION] != (operand1 - operand2)){
+            return false;
+        }
+
+        return true;
     }
 }
