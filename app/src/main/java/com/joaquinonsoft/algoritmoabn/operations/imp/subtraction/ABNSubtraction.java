@@ -66,9 +66,6 @@ public class ABNSubtraction extends AbstractABNOperation {
         steps[0][0] = 0;
         steps[0][1] = operand1;
         steps[0][2] = operand2;
-
-        currentRow = 1;
-        currentCol = 0;
     }
 
     @Override

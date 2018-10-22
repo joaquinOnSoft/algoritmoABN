@@ -86,9 +86,6 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
     protected void initialize() {
         steps[0][COLUM_MULTIPLYING_IN_UNITS] = operand1;
         steps[0][COLUM_PARTIAL_PRODUCTS] = operand2;
-
-        currentRow = 1;
-        currentCol = 0;
     }
 
     @Override

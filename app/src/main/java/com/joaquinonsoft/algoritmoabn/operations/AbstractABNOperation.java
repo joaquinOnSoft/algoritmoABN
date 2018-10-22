@@ -34,6 +34,9 @@ public abstract class AbstractABNOperation implements ABNOperation {
         this.operand2 = operand2;
 
         steps = new int[getNumRows()][NUM_COLUMNS];
+
+        currentRow = 1;
+        currentCol = 0;
         initialize();
     }
 
