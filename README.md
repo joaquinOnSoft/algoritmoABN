@@ -32,6 +32,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+## Icons attribution
+Icons designed by [https://www.freepik.com](Freepik) from [https://www.flaticon.es/](www.flaticon.es)
+
 ## About Joaquín On Software
 
 Joaquín On Software is a personal web page where I write about technical topics
