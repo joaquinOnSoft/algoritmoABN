@@ -26,7 +26,7 @@ class DecompositionTest {
     private var decomp: Decomposition = Decomposition(4356)
 
     @Test
-    fun getThounsands() {
+    fun getThousands() {
         assertEquals(4, decomp.thousands)
     }
 
