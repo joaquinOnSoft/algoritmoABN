@@ -35,7 +35,7 @@ public class OperationFactory {
     private OperationFactory() {
     }
 
-    public ABNOperation getOperation(Operarion op){
+    public ABNOperation getOperation(Operation op){
         int operand1;
         int operand2;
 
@@ -53,7 +53,7 @@ public class OperationFactory {
                 operand1 = getNumberInInterval(0,100);
                 operand2 = getNumberInInterval(0,10);
                 return new ABNMultiplicationByAFigure(operand1,operand2);
-            case DIVISONx1DIGIT:
+            case DIVISIONx1DIGIT:
                 operand1 = getNumberInInterval(10,100);
                 operand2 = getNumberInInterval(1,10);
                 return new ABNDivisionByAFigure(operand1, operand2);

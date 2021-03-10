@@ -74,9 +74,9 @@ import java.util.List;
  */
 public class ABNMultiplicationByAFigure extends AbstractABNOperation {
 
-    private static final int COLUM_MULTIPLYING_IN_UNITS = 0;
-    private static final int COLUM_PARTIAL_PRODUCTS = 1;
-    private static final int COLUM_ACCUMULATED_PRODUCT = 2;
+    private static final int COLUMN_MULTIPLYING_IN_UNITS = 0;
+    private static final int COLUMN_PARTIAL_PRODUCTS = 1;
+    private static final int COLUMN_ACCUMULATED_PRODUCT = 2;
 
     public ABNMultiplicationByAFigure(int operand1, int operand2){
         super(operand1,operand2);
@@ -84,8 +84,8 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
 
     @Override
     protected void initialize() {
-        steps[0][COLUM_MULTIPLYING_IN_UNITS] = operand1;
-        steps[0][COLUM_PARTIAL_PRODUCTS] = operand2;
+        steps[0][COLUMN_MULTIPLYING_IN_UNITS] = operand1;
+        steps[0][COLUMN_PARTIAL_PRODUCTS] = operand2;
     }
 
     @Override
@@ -103,41 +103,41 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
         int row = 1;
 
         int[][] autoCalculatedSteps = new int[getNumRows()][NUM_COLUMNS];
-        autoCalculatedSteps[0][COLUM_MULTIPLYING_IN_UNITS] = operand1;
-        autoCalculatedSteps[0][COLUM_PARTIAL_PRODUCTS] = operand2;
+        autoCalculatedSteps[0][COLUMN_MULTIPLYING_IN_UNITS] = operand1;
+        autoCalculatedSteps[0][COLUMN_PARTIAL_PRODUCTS] = operand2;
 
         Decomposition decomp = new Decomposition(operand1);
         if(decomp.getThousands() > 0){
-            autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getUnitsInThousands();
-            autoCalculatedSteps[row][COLUM_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
+            autoCalculatedSteps[row][COLUMN_MULTIPLYING_IN_UNITS] = decomp.getUnitsInThousands();
+            autoCalculatedSteps[row][COLUMN_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUMN_MULTIPLYING_IN_UNITS] * operand2;
             row++;
         }
 
         if(decomp.getHundreds() > 0){
-            autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getUnitsInHundreds();
-            autoCalculatedSteps[row][COLUM_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
+            autoCalculatedSteps[row][COLUMN_MULTIPLYING_IN_UNITS] = decomp.getUnitsInHundreds();
+            autoCalculatedSteps[row][COLUMN_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUMN_MULTIPLYING_IN_UNITS] * operand2;
             row++;
         }
 
         if(decomp.getTens() > 0){
-            autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getUnitsInTens();
-            autoCalculatedSteps[row][COLUM_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
+            autoCalculatedSteps[row][COLUMN_MULTIPLYING_IN_UNITS] = decomp.getUnitsInTens();
+            autoCalculatedSteps[row][COLUMN_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUMN_MULTIPLYING_IN_UNITS] * operand2;
             row++;
         }
 
-        autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] = decomp.getOnes();
-        autoCalculatedSteps[row][COLUM_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2;
+        autoCalculatedSteps[row][COLUMN_MULTIPLYING_IN_UNITS] = decomp.getOnes();
+        autoCalculatedSteps[row][COLUMN_PARTIAL_PRODUCTS] = autoCalculatedSteps[row][COLUMN_MULTIPLYING_IN_UNITS] * operand2;
 
         int accumulated = 0;
         for(int i=1; i<=row; i++){
             if(i == 1){
-                accumulated = autoCalculatedSteps[i][COLUM_PARTIAL_PRODUCTS];
+                accumulated = autoCalculatedSteps[i][COLUMN_PARTIAL_PRODUCTS];
             }
             else{
-                accumulated += autoCalculatedSteps[i ][COLUM_PARTIAL_PRODUCTS];
+                accumulated += autoCalculatedSteps[i ][COLUMN_PARTIAL_PRODUCTS];
 
             }
-            autoCalculatedSteps[i][COLUM_ACCUMULATED_PRODUCT] = accumulated;
+            autoCalculatedSteps[i][COLUMN_ACCUMULATED_PRODUCT] = accumulated;
         }
 
         return autoCalculatedSteps;
@@ -149,28 +149,28 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
         List<Integer> values = new LinkedList<>();
 
         switch (currentCol){
-            case COLUM_MULTIPLYING_IN_UNITS:
+            case COLUMN_MULTIPLYING_IN_UNITS:
                 int max = operand1;
 
                 if(currentRow >= 2){
-                     max = steps[currentRow - 1][COLUM_MULTIPLYING_IN_UNITS] - steps[currentRow][COLUM_MULTIPLYING_IN_UNITS];
+                     max = steps[currentRow - 1][COLUMN_MULTIPLYING_IN_UNITS] - steps[currentRow][COLUMN_MULTIPLYING_IN_UNITS];
                 }
 
                 for(int i=0; i<= max; ++i){
                     values.add(i);
                 }
                 break;
-            case COLUM_PARTIAL_PRODUCTS:
-                values.add(steps[currentRow][COLUM_MULTIPLYING_IN_UNITS] * operand2);
+            case COLUMN_PARTIAL_PRODUCTS:
+                values.add(steps[currentRow][COLUMN_MULTIPLYING_IN_UNITS] * operand2);
                 break;
-            case COLUM_ACCUMULATED_PRODUCT:
+            case COLUMN_ACCUMULATED_PRODUCT:
                 if(currentRow == 1){
-                    values.add(steps[currentRow][COLUM_MULTIPLYING_IN_UNITS] * operand2);
+                    values.add(steps[currentRow][COLUMN_MULTIPLYING_IN_UNITS] * operand2);
                 }
                 else{
                     int partialMult=0;
                     for(int row=1; row<=currentRow; row++){
-                        partialMult += steps[row][COLUM_PARTIAL_PRODUCTS];
+                        partialMult += steps[row][COLUMN_PARTIAL_PRODUCTS];
                     }
                     values.add(partialMult);
                 }
@@ -182,20 +182,20 @@ public class ABNMultiplicationByAFigure extends AbstractABNOperation {
     @Override
     public boolean isSolved() {
         for(int row=1; row<currentRow; row++){
-            if(steps[row][COLUM_MULTIPLYING_IN_UNITS] > steps[row - 1][COLUM_MULTIPLYING_IN_UNITS]){
+            if(steps[row][COLUMN_MULTIPLYING_IN_UNITS] > steps[row - 1][COLUMN_MULTIPLYING_IN_UNITS]){
                 return false;
             }
 
-            if(steps[row][COLUM_PARTIAL_PRODUCTS] != (steps[row][COLUM_MULTIPLYING_IN_UNITS] * operand2)){
+            if(steps[row][COLUMN_PARTIAL_PRODUCTS] != (steps[row][COLUMN_MULTIPLYING_IN_UNITS] * operand2)){
                 return false;
             }
 
-            if(steps[row][COLUM_ACCUMULATED_PRODUCT] != (steps[row][COLUM_PARTIAL_PRODUCTS] + steps[row - 1][COLUM_ACCUMULATED_PRODUCT])){
+            if(steps[row][COLUMN_ACCUMULATED_PRODUCT] != (steps[row][COLUMN_PARTIAL_PRODUCTS] + steps[row - 1][COLUMN_ACCUMULATED_PRODUCT])){
                 return false;
             }
         }
 
-        if(steps[currentRow][COLUM_ACCUMULATED_PRODUCT] != (operand1 * operand2)){
+        if(steps[currentRow][COLUMN_ACCUMULATED_PRODUCT] != (operand1 * operand2)){
             return false;
         }
 

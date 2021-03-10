@@ -18,14 +18,14 @@
  */
 package com.joaquinonsoft.algoritmoabn.operations;
 
-public enum Operarion {
+public enum Operation {
     SUM("+2D"),
     SUBTRACTION("-"),
-    DIVISONx1DIGIT("/1D"),
+    DIVISIONx1DIGIT("/1D"),
     MULTIPLICATIONx1DIGIT("*1D");
 
     private final String op;
-    Operarion(String op){
+    Operation(String op){
         this.op = op;
     }
 
